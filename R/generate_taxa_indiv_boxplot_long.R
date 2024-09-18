@@ -347,11 +347,11 @@ generate_taxa_indiv_boxplot_long <-
           stat_boxplot(
             geom = "errorbar",
             position = position_dodge(width = 0.2),
-            width = 0.1
+            width = 0.3
           ) +
           geom_boxplot(
             position = position_dodge(width = 0.8),
-            width = 0.1,
+            width = 0.3,
             #fill = "white"
           ) +
           geom_line(

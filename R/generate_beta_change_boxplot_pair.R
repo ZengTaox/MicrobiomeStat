@@ -234,13 +234,13 @@ generate_beta_change_boxplot_pair <-
         #geom_violin(trim = F,alpha = 0.8) +
         stat_boxplot(geom = "errorbar",
                      position = position_dodge(width = 0.2),
-                     width = 0.1) +
+                     width = 0.3) +
         geom_boxplot(
           position = position_dodge(width = 0.8),
-          width = 0.1,
+          width = 0.3,
           #fill = "white"
         ) +
-        geom_jitter(width = 0.1, alpha = 0.5, size = 1.7) +
+        geom_jitter(width = 0.3, alpha = 0.5, size = 1.7) +
         scale_fill_manual(values = col) +
         facet_wrap(as.formula(facet_formula), scales = "fixed") +
         xlab(group.var) +

@@ -866,7 +866,7 @@ for(index_name in names(alpha_volatility_test_results)) {
 
 ### 3.1.1 Beta diversity ordinationplot
 
-```{r beta-ordination-generation, message=FALSE, fig.align='center', warning = FALSE, fig.width = 18, fig.height = 8, results='asis'}
+```{r beta-ordination-generation, message=FALSE, fig.align='center', warning = FALSE, fig.width = 10, fig.height = 7, results='asis'}
 beta_ordination_results <- generate_beta_ordination_long(data.obj = data.obj,
                                                            dist.obj = dist.obj,
                                                            pc.obj = pc.obj,
@@ -1249,7 +1249,7 @@ taxa_volatility_test_results <- generate_taxa_volatility_test_long(
                                                )
 ```
 
-```{r taxa-volatility-test-results-print, echo=FALSE, message=FALSE, results='asis', fig.align='center', fig.width = 10, fig.height = 8, warning = FALSE}
+```{r taxa-volatility-test-results-print, echo=FALSE, message=FALSE, results='asis', fig.align='center', fig.width = 6.5, fig.height = 6.5, warning = FALSE}
 
 volatility_volcano_plots <- generate_taxa_volatility_volcano_long(data.obj = data.obj,
                                                                   group.var = group.var,
@@ -1501,74 +1501,6 @@ for (feature_level in names(taxa_indiv_boxplot_results)) {
 
   cat(paste0('The boxplot results for individual features at the ', feature_level, ' level can be found at: ', full_file_path, '. Please refer to this file for more detailed visualizations.\n'))
 }
-
-```
-
-### 4.3.2 Significant features spaghettiplot
-
-```{r taxa-spaghettiplot-longitudinal-generation, message=FALSE, fig.height=3, fig.width=8, fig.align='center', results='asis'}
-if (length(combined_significant_taxa) != 0){
-
-taxa_indiv_spaghettiplot_results_sig_features <- generate_taxa_indiv_spaghettiplot_long(
-                                   data.obj = data.obj,
-                                   subject.var = subject.var,
-                                   time.var = time.var,
-                                   t0.level = t0.level,
-                                   ts.levels = ts.levels,
-                                   group.var = group.var,
-                                   strata.var = strata.var,
-                                   feature.change.func = feature.change.func,
-                                   feature.level = test.feature.level,
-                                   features.plot = combined_significant_taxa,
-                                   feature.dat.type = feature.dat.type,
-                                   top.k.plot = NULL,
-                                   top.k.func = NULL,
-                                   prev.filter = prev.filter,
-                                   abund.filter = abund.filter,
-                                   base.size = 10,
-                                   theme.choice = theme.choice,
-                                   custom.theme = custom.theme,
-                                   palette = palette,
-                                   pdf = TRUE,
-                                   file.ann = file.ann,
-                                   pdf.wid = pdf.wid,
-                                   pdf.hei = pdf.hei)
-}
-
-```
-
-```{r taxa-spaghettiplot-longitudinal-print, echo=FALSE, message=FALSE, results='asis', fig.align='center', fig.width = 8, fig.height = 4}
-if (length(combined_significant_taxa) != 0){
-taxa_indiv_spaghettiplot_results_sig_features
-}
-```
-
-```{r spaghettiplot-pdf-name-creation, echo=FALSE, message=FALSE, results='asis'}
-
-taxa_indiv_spaghettiplot_results <- generate_taxa_indiv_spaghettiplot_long(
-                                   data.obj = data.obj,
-                                   subject.var = subject.var,
-                                   time.var = time.var,
-                                   t0.level = t0.level,
-                                   ts.levels = ts.levels,
-                                   group.var = group.var,
-                                   strata.var = strata.var,
-                                   feature.change.func = feature.change.func,
-                                   feature.level = test.feature.level,
-                                   features.plot = NULL,
-                                   feature.dat.type = feature.dat.type,
-                                   top.k.plot = NULL,
-                                   top.k.func = NULL,
-                                   prev.filter = prev.filter,
-                                   abund.filter = abund.filter,
-                                   base.size = 10,
-                                   theme.choice = theme.choice,
-                                   custom.theme = custom.theme,
-                                   palette = palette,
-                                   pdf = TRUE,
-                                   file.ann = file.ann,
-                                   pdf.wid = pdf.wid,
-                                   pdf.hei = pdf.hei)
 
 ```
 

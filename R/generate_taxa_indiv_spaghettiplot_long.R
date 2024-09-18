@@ -246,7 +246,7 @@ generate_taxa_indiv_spaghettiplot_long <-
       plot_list <- lapply(taxa.levels, function(tax) {
         sub_df <- df %>% filter(!!sym(feature.level) == tax)
         lineplot <- ggplot() +
-          geom_line(
+          geom_point(
             data = sub_df,
             aes_string(
               x = time.var,

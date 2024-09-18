@@ -139,9 +139,7 @@ mStat_summarize_data_obj <-
           #print(grouped_df)
 
             palette <- mStat_get_palette(palette)
-
-          print(
-            ggplot(grouped_df, aes(
+            p1 <- ggplot(grouped_df, aes(
               x = !!sym(time.var),
               y = SampleCount,
               fill = !!sym(group.var)
@@ -156,6 +154,9 @@ mStat_summarize_data_obj <-
                 y = "Sample Count"
               ) +
               scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, NA))
+          print(
+            # patchwork::plot_spacer() + p1 + patchwork::plot_spacer()
+            p1
           )
         } else {
           # Calculate the table

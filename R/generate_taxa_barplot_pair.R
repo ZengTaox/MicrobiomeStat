@@ -410,15 +410,15 @@ generate_taxa_barplot_pair <-
           axis.title.y = element_text(size = base.size, color = "black"),
           legend.key = element_blank(),
           legend.text = element_text(color = "black", size = base.size),
-          legend.title = element_text(color = "black", size = base.size),
           legend.spacing.x = unit(0.1, 'cm'),
           legend.spacing.y = unit(0.1, 'cm'),
-          legend.key.width = unit(0.4, 'cm'),
-          legend.key.height = unit(0.4, 'cm'),
+          legend.key.width = unit(1, 'cm'),
+          legend.key.height = unit(1, 'cm'),
           legend.background = element_blank(),
           panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()
-        )
+          panel.grid.minor = element_blank(),
+          legend.title = element_text(color = "black", size = base.size * 1.5)
+        ) 
 
       # The following is the drawing of the average barplot.
       last_time_ids <- sorted_merged_long_df %>%
@@ -564,12 +564,13 @@ generate_taxa_barplot_pair <-
           legend.text = element_text(color = "black", size = base.size),
           legend.spacing.x = unit(0.1, 'cm'),
           legend.spacing.y = unit(0.1, 'cm'),
-          legend.key.width = unit(0.4, 'cm'),
-          legend.key.height = unit(0.4, 'cm'),
+          legend.key.width = unit(1, 'cm'),
+          legend.key.height = unit(1, 'cm'),
           legend.background = element_blank(),
           panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()
-        )
+          panel.grid.minor = element_blank(),
+          legend.title = element_text(color = "black", size = base.size * 1.5)
+        ) 
 
 
       # Save the stacked barplots as a PDF file

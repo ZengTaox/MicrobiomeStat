@@ -178,6 +178,7 @@ generate_beta_per_time_dotplot_long <- function(data.obj,
            y = "Term",
            size = "Coefficient",
            color = p_val_var) +
+      scale_radius(range = c(0, 10)) +
       theme_to_use +
       theme(
         axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = base.size),

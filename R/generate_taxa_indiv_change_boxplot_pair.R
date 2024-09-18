@@ -370,14 +370,14 @@ generate_taxa_indiv_change_boxplot_pair <-
           stat_boxplot(
             geom = "errorbar",
             position = position_dodge(width = 0.2),
-            width = 0.1
+            width = 0.3
           ) +
           geom_boxplot(
             position = position_dodge(width = 0.8),
-            width = 0.1,
+            width = 0.3,
             #fill = "white"
           ) +
-          geom_jitter(width = 0.1,
+          geom_jitter(width = 0.3,
                       alpha = 0.3,
                       size = 1.7) +
           scale_alpha_manual(values = c(0.5, 0.5)) +
